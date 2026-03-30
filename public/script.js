@@ -3,7 +3,7 @@
  * Connects to the Express backend at http://localhost:3000
  */
 
-const API_BASE = 'http://localhost:3000';
+const API_BASE = 'https://hop-on.onrender.com/';
 
 async function apiFetch(path) {
   const res = await fetch(`${API_BASE}${path}`);
