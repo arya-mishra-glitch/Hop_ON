@@ -10,7 +10,7 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // ──────────────────────────────────────────────
 // Middleware
@@ -442,7 +442,7 @@ app.get('/plan', (req, res) => {
 // ──────────────────────────────────────────────
 loadData();
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`\n🚌 HopOn backend running at http://localhost:${PORT}`);
   console.log(`   GET /stops            – all stops`);
   console.log(`   GET /routes           – all routes summary`);
