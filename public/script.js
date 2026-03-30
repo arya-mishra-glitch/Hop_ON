@@ -3,7 +3,7 @@
  * Connects to the Express backend at http://localhost:3000
  */
 
-const API_BASE = 'https://hop-on.onrender.com/';
+const API_BASE = 'https://hop-on.onrender.com';   // ← removed trailing slash
 
 async function apiFetch(path) {
   const res = await fetch(`${API_BASE}${path}`);
@@ -458,7 +458,7 @@ async function loadSearchResults() {
 
   } catch (err) {
     if (loadingDots) {
-      loadingDots.textContent = '\u26a0\ufe0f Could not connect to server \u2013 is the backend running on port 3000?';
+      loadingDots.textContent = '\u26a0\ufe0f Could not connect to server. Is the app deployed correctly?';  // ← removed "port 3000"
       loadingDots.style.color = '#e53e3e';
     }
   }
